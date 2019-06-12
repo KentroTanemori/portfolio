@@ -13,6 +13,6 @@ function toggleNav() {
 
 
 
-$(document).on('turbolinks:load', function() {
+$(document).ready(function() {
 toggleNav();
 })
