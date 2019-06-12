@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :corrent_user, only: [:edit]
+  before_action :correct_user, only: [:edit]
   def show
   	  @user = User.find(params[:id])
   	  @post_images = @user.post_images.page(params[:page]).reverse_order
