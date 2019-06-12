@@ -1,0 +1,295 @@
+// Place all the styles related to the root controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.title {
+	text-align: center;
+}
+.time {
+	text-align: center;
+}
+.title2 {
+	text-align: center;
+}
+.box5 {
+	display: flex;
+	flex-wrap: wrap;
+	width: 420px;
+	margin: 0 auto;
+}
+.nav bar {
+	display: none;
+}
+.circle1 {
+    width: 200px;
+    height: 200px;
+	border-radius: 50% 50% 0 50%;
+	margin: 5px;
+	text-align: center;
+	line-height: 225px;
+	animation: bg-color 10s infinite;
+    -webkit-animation: bg-color 10s infinite;
+}
+.circle2 {
+	width: 200px;
+	height: 200px;
+	border-radius: 50% 50% 50% 0;
+    margin: 5px;
+    text-align: center;
+    line-height: 225px;
+    animation: bg-color1 10s infinite;
+    -webkit-animation: bg-color1 10s infinite;
+}
+.circle3 {
+	width: 200px;
+	height: 200px;
+	border-radius: 50% 0 50% 50%;
+	margin: 5px;
+	text-align: center;
+	line-height: 225px;
+	animation: bg-color2 10s infinite;
+    -webkit-animation: bg-color2 10s infinite;
+}
+.circle4 {
+	width: 200px;
+	height: 200px;
+	border-radius: 0 50% 50% 50%;
+	margin: 5px;
+	text-align: center;
+	line-height: 225px;
+	animation: bg-color2 10s infinite;
+    -webkit-animation: bg-color3 10s infinite;
+}
+.media-area1{
+    border-top: 1px solid silver;
+	padding-top: 45px;
+	#background-color: #fafafa;
+    padding-bottom: 50px;
+    height: 500px;
+	background-image: url(ELL96_akakuchiba_TP_V.jpg);
+	background-size: cover;
+	text-align: center;
+	margin-top: -20px;
+}
+.madia-area-content{
+	height: 370px;
+	background-color: rgba( 0, 0, 0, 0.5);
+
+}
+.media-area1 h1 {
+	font-size: 64px;
+	color: white;
+	text-shadow: 0px 0px 1px #000,
+    4px 4px 2px rgba(0,0,0,0.5);
+    line-height: 350px;
+
+}
+.circle5 {
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	animation: bg-color4 10s infinite;
+    -webkit-animation: bg-color4 10s infinite;
+    text-align: center;
+     margin: 0 auto;
+     line-height: 300px;
+     margin-top: 100px;
+     font-size: 64px;
+     text-shadow: 0px 0px 1px #000,
+    4px 4px 2px rgba(0,0,0,0.5);
+}
+
+p a {
+	color: inherit;
+}
+
+p1 a {
+	color: inherit;
+    letter-spacing: 1px;
+}
+
+p2 a {
+	color: inherit;
+}
+p3 {
+    font-size: 25px;
+}
+p3 a {
+	color: inherit;
+}
+
+p5 {
+    font-size: 60px;
+    color: #eee;
+    border: none;
+    text-shadow: 0px 0px 1px #000,
+    4px 4px 2px rgba(0,0,0,0.5);
+    padding:15px;
+    position: absolute;
+
+}
+.space1 {
+	text-align: center;
+}
+.main {
+	background-color: #eceff1;
+	height: 800px;
+	text-align: center;
+	font-size: 32px;
+	padding-top: 50px;
+}
+.border {
+	border-bottom: solid #ec715f;
+	padding-top: 8px;
+	height: 3px;
+	width: 70px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+.main p3 {
+	line-height: 100px;
+}
+.image-area {
+	margin: 0 auto;
+	height: 550px;
+	width: 920px;
+
+}
+.img {
+	width: 300px;
+	height: 250px;
+	float: left;
+	background-size: cover;
+	background-position: center;
+	background-image: url(IMG_4586.jpeg);
+	margin:5px 0px;
+}
+.img1{
+	width: 300px;
+	height: 250px;
+	float: left;
+	background-size: cover;
+	background-position: center;
+	background-image: url(IMG_4594.jpeg);
+	margin:5px 10px;
+}
+.img2{
+	width: 300px;
+	height: 250px;
+	float: left;
+	background-size: cover;
+	background-position: center;
+	background-image: url(IMG_4806.jpeg);
+	margin:5px 0px;
+}
+.img3{
+	width: 300px;
+	height: 250px;
+	float: left;
+	background-size: cover;
+	background-position: center;
+	background-image: url(IMG_4904.jpeg);
+	margin:5px 0px;
+}
+.img4{
+	width: 300px;
+	height: 250px;
+	float: left;
+	background-size: cover;
+	background-position: center;
+	background-image: url(IMG_4914.jpeg);
+	margin:5px 10px;
+}
+.img5{
+	width: 300px;
+	height: 250px;
+	float: left;
+	background-size: cover;
+	background-position: center;
+	background-image: url(IMG_4926.jpeg);
+	margin:5px 0px;
+}
+
+.media-area3 {
+	font-size: 32px;
+	text-align: center;
+	height: 380px;
+	padding-top: 45px;
+}
+footer {
+	border-top: 1px solid silver;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+@media screen and (min-width:769px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .time {
+       display: none;
+    }
+    .media-area1 {
+        width: 100%;
+    }
+    .media-area1 h1 {
+       font-size: 40px;
+    }
+	.img {
+		float: none;
+		margin: 5px auto;
+	}
+	.img1 {
+		float: none;
+		margin: 5px auto;
+	}
+	.img2 {
+		float: none;
+		margin: 5px auto;
+	}
+	.img3 {
+		float: none;
+		margin: 5px auto;
+	}
+	.img4 {
+		float: none;
+		margin: 5px auto;
+	}
+	.img5 {
+		float: none;
+		margin: 5px auto;
+	}
+	.image-area {
+	    width: 100%;
+	}
+	.main {
+	   width: 100%;
+	   text-align: center;
+	   height: 1800px;
+	}
+	.box5 {
+	   width: 60%;
+	}
+	.nav-list-right {
+	   display: none;
+	}
+	.circle {
+	   margin-bottom: 10px;
+	}
+	.footer {
+	   width: 100%;
+	}
+}
+@media screen and (max-width:500px) {
+    .sm-image {
+	   width: 300px;
+	   height: 300px;
+	}
+	.item a {
+	   margin-right: 100px;
+	}
+}
+@media screen and (max-width:320px) {
+
+}

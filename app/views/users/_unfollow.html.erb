@@ -1,0 +1,5 @@
+<div class="btn">
+<%= form_for(current_user.following_relationships.find_by(following_id: @user.id), html: { method: :delete }) do |f| %>
+  <%= f.submit "フォロー中", class: "btn btn-large btn-primary follow-btn", method: :delete, "data-confirm" => "#{@user.name}さんのフォローをやめますか？" %>
+<% end %>
+</div>

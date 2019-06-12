@@ -1,0 +1,289 @@
+// Place all the styles related to the PostImages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+header {
+	background-color: white;
+}
+
+.nav-list-left {
+    float: left;
+    margin-top: 20px;
+}
+.nav-list-right {
+	float: right;
+	margin-top: 20px;
+	letter-spacing: 2px;
+}
+.hum_menu{
+  width: 50px;
+  height: 40px;
+  display: none;
+  float: right;
+  border:1px solid black;
+}
+.hum_bar{
+  position: absolute;
+  left: 11px;
+  width: 18px;
+  height: 1px;
+  background-color: #111;
+  transition: all .6s;
+}
+.global-nav {
+  position: fixed;
+  right: -320px;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  padding-top: 40px;
+  background-color: #fff;
+  transition: all .6s;
+  z-index: 200;
+  overflow-y: auto
+}
+.hamburger {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 300;
+}
+.global-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.global-nav__item {
+  text-align: center;
+  padding: 0 14px;
+}
+.global-nav__item a {
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #111;
+}
+
+.global-nav__item a:hover {
+  background-color: #eee;
+}
+.hamburger__line {
+  position: absolute;
+  left: 11px;
+  width: 18px;
+  height: 1px;
+  background-color: #111;
+  transition: all .6s;
+}
+.hamburger__line--1 {
+  top: 14px;
+}
+.hamburger__line--2 {
+  top: 20px;
+}
+.hamburger__line--3 {
+  top: 26px;
+}
+
+
+.black-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: #000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .6s;
+  cursor: pointer;
+}
+.nav-open .global-nav {
+  right: 0;
+}
+.nav-open .black-bg {
+  opacity: .8;
+  visibility: visible;
+}
+.nav-open .hamburger__line--1 {
+  transform: rotate(45deg);
+  top: 20px;
+}
+.nav-open .hamburger__line--2 {
+  width: 0;
+  left: 50%;
+}
+.nav-open .hamburger__line--3 {
+  transform: rotate(-45deg);
+  top: 20px;
+}
+.follow {
+	letter-spacing: 1px;
+}
+
+.far {
+    margin: 10px;
+}
+
+.media-area {
+  border-top: 1px solid silver;
+	padding-top: 45px;
+	#background-color: #fafafa;
+  padding-bottom: 50px;
+  background-image: url(MIYADSC_2676_TP_V1.jpg);
+  background-size: cover;
+}
+
+.media-area2 {
+  border-top: 1px solid silver;
+  padding-top: 45px;
+  padding-bottom: 30px;
+  #background-color: #fafafa;
+}
+.col-xs-9 {
+	float: left;
+}
+
+.col-xs-6 {
+    left: 15%;
+}
+.col-xs-7 {
+    left: 15%;
+}
+
+
+.image {
+	text-align: center;
+}
+.image2 {
+    margin-top: 10px;
+}
+
+.space {
+	letter-spacing: 5px;
+}
+
+h6 a {
+	color: inherit;
+}
+
+h3 a {
+  color: inherit;
+}
+h4 a {
+  color: inherit;
+}
+
+.btn-twitter-follow {
+  text-decoration: none;
+  background-image: linear-gradient(#fff,#f5f8fa);
+  border: 1px solid #e6ecf0;
+  border-radius: 4px;
+  color: #393e42;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 14px;
+  position: relative;
+ }
+.box {
+	  border: 1px solid red;
+    border-radius: 50px 50px 50px 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    background: #5c5e60;
+    text-shadow: 0px 0px 1px red,
+}
+.box h7 {
+  color: white;
+}
+.box h3 {
+  color: white;
+}
+.box h4 {
+  color: white;
+}
+
+.box2 {
+	  text-align: center;
+}
+
+.box3 {
+  text-align: center;
+}
+body {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+.circle {
+  padding: 15px;
+  background: #5c5e60;
+  border: 1px solid red;
+  border-radius: 50px 50px 50px 50px;
+  text-shadow: 0px 0px 1px red,
+}
+.circle h2 {
+  color: #fff;
+}
+.circle h4 {
+  color: white;
+}
+.circle th {
+  color: white;
+}
+
+@-webkit-keyframes bg-color {
+  0% { background-color: #e74c3c; }
+  20% { background-color: #f1c40f; }
+  40% { background-color: #1abc9c; }
+  60% { background-color: #3498db; }
+  80% { background-color: #9b59b6; }
+  100% { background-color: #e74c3c; }
+}
+@keyframes bg-color {
+  0% { background-color: #ff000; }
+  20% { background-color: #ff4f02; }
+  40% { background-color: #ffff00; }
+  60% { background-color: #b6ff01; }
+  80% { background-color: #00ff38; }
+  100% { background-color: #00ecff; }
+}
+
+@keyframes bg-color1 {
+  0% { background-color: #0000ff; }
+  20% { background-color: #005fff; }
+  40% { background-color: #5507ff; }
+  60% { background-color: #ff0461; }
+  80% { background-color: #ff0000; }
+  100% { background-color: #ff4f02; }
+}
+@keyframes bg-color2 {
+  0% { background-color: #ffff00; }
+  20% { background-color: #b6ff01; }
+  40% { background-color: #00ff38; }
+  60% { background-color: #00ecff; }
+  80% { background-color: #0000ff; }
+  100% { background-color: #005fff; }
+}
+@keyframes bg-color3 {
+  0% { background-color: #00ff00; }
+  20% { background-color: #00ecff; }
+  40% { background-color: #0000ff; }
+  60% { background-color: #005fff; }
+  80% { background-color: #5507ff; }
+  100% { background-color: #ff0461; }
+}
+@keyframes bg-color4 {
+  0% { background-color: #69d2ff; }
+  20% { background-color: #71dca7; }
+  40% { background-color: #ffd458; }
+  60% { background-color: #ffa7de; }
+  80% { background-color: #69d2ff; }
+  100% { background-color: #ff0461; }
+}

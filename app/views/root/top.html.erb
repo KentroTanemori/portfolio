@@ -1,0 +1,26 @@
+<%= render 'template/header' %>
+<div class="media-area">
+ <div class="container">
+      <div class="row">
+        <h1 class="time">
+        <SCRIPT language="JavaScript">
+          t = setInterval("DspClk()", 500);
+        </SCRIPT>
+
+        <FORM name="ClkForm">
+        <INPUT type="text" name="Input">
+        </FORM>
+       </h1>
+ 	     <h1 class= "title">Welcome to<i class= "fas fa-portrait"></i>Portfolio !!</h1>
+       <h4 class="title2">In  <i class= "fas fa-portrait"></i>Portfolio</h4>
+         <div class="box5">
+                 <div class="circle1"><span><p><%= link_to "Home", top_path, class: "glyphicon glyphicon-home home fa-2x" %></p></span></div>
+                 <div class="circle2"><span><p1><%= link_to "Log in", new_user_session_path, class: "nav-list-item glyphicon glyphicon-log-in fa-2x" %></p1></span></div>
+                 <div class="circle3"><span><p2><%= link_to "Sign up", new_user_registration_path, class: "glyphicon glyphicon-edit fa-2x" %></p2></span></div>
+                 <div class="circle4"><span><p3><%= link_to "Sample App", root_index_path, class: "far fa-user" %></p3></span></div>
+
+         </div>
+
+      </div>
+ </div>
+</div>

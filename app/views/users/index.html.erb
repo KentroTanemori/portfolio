@@ -1,0 +1,70 @@
+<%= render 'template/header' %>
+  <div class="media-area2">
+     <div class="container">
+      <div class="row">
+       <div class="col-xs-12 col-sm-6 col-md-3">
+         <div class="circle">
+          <h2>User info</h2>
+              <table class="table">
+                <tbody>
+                   <div class="image">
+                    <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100", class: "img-circle" %>
+                   </div>
+                   <br>
+                  <tr>
+                    <th>name</th>
+                    <th><%= @user.name %></th>
+                  </tr>
+                </tbody>
+              </table>
+                 <%= link_to edit_user_path(@user.id) do %>
+                      <div class="col-xs-12 btn btn-default ">
+                      <span class="glyphicon glyphicon-wrench" aria-hidden="true" ></span>
+                      </div>
+                 <% end %>
+                 <br>
+                 <br>
+                 <h4>投稿<%= @post_images.count %>件</h4>
+                 <%= render 'follow_form' %>
+                 <%= render 'stats' %>
+         </div>
+       </div>
+          <div class="col-xs-12 col-md-offset-2 col-md-7">
+
+        				<% provide(:title, 'All users') %>
+        				    <h1>All users</h1>
+
+        				    <h2>user search</h2>
+        				<%= form_tag(users_path, :method => 'get' ) do %>
+        				  <%= text_field_tag :search %>
+
+        				  <%= submit_tag 'Search', :name => nil %>
+        				<% end %>
+
+
+        				      <table class="table table-hover table-inverse">
+
+                          <thead>
+                			   	   <tr>
+                			         <th>profile image</th>
+                			         <th>name</th>
+			                       </tr>
+			                     </thead>
+
+			                       <tbody>
+                      				   <ul class="users">
+                      				    <% @users.each do |user| %>
+                                       <tr>
+                      			            <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60", class: "img-circle pull-left profile-thumb" %></td>
+                      			            <td><%= link_to user.name, user_path(user.id) %></td>
+                      			           </tr>
+                      				    <% end %>
+                                  <h4><%= paginate @users, class: "pagenate" %></h4>
+                      				   </ul>
+                      			 </tbody>
+                      </table>
+		        </div>
+
+       </div>
+	 </div>
+  </div>

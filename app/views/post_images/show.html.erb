@@ -1,0 +1,106 @@
+<%= render 'template/header' %>
+   <div class="media-area2">
+     <div class="container">
+     	<div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="circle">
+	           <h2>User info</h2>
+	              <table class="table">
+	                <tbody>
+	                 <div class="image">
+	                  <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100", class: "img-circle" %>
+                     </div>
+                     <br>
+	                  <tr>
+	                    <th>name</th>
+	                    <th><%= @user.name %></th>
+	                  </tr>
+	                </tbody>
+	              </table>
+	                 <%= link_to edit_user_path(@user.id) do %>
+	                      <div class="col-xs-12 btn btn-default ">
+	                      <span class="glyphicon glyphicon-wrench" aria-hidden="true" ></span>
+	                      </div>
+	                 <% end %>
+	                 <br>
+	                 <br>
+	                 <h4>投稿<%= @post_images.count %>件</h4>
+	                 <%= render 'follow_form' %>
+                     <%= render 'stats' %>
+	        </div>
+	      </div>
+          <div class="col-xs-12 col-md-offset-2 col-md-7">
+                    	<div class="slider">
+                    		<% @post_image.images.each do |image| %>
+
+						         <%= attachment_image_tag image, :image, size: "500x500", class: "sm-image" %>
+						    <% end %>
+						</div>
+								 <div class="box">
+										     <h3><%= @post_image.title %></h3>
+										     <h3><%= @post_image.body %></h3>
+										     <h4 class="space"><%= @post_image.user.name %></h4>
+
+										<% if @post_image.favorited_by?(current_user) %>
+
+										　<%= link_to post_image_favorites_path(@post_image), method: :delete do %>
+										  	   <h7><i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+										    <%= @post_image.favorites.count %> いいね</h7>
+										  <% end %>
+
+									      <% else %>
+
+									        <%= link_to post_image_favorites_path(@post_image), method: :post do %></h4>
+									      	   <i class="fa fa-heart-o" aria-hidden="true"></i>
+									          <%= @post_image.favorites.count %> いいね
+									      <% end %>
+
+									    <% end %>
+
+									        <% if @post_image.user == current_user %>
+									       	  <h4><%= link_to "編集", edit_post_image_path(@post_image.id) %>
+									       	      <%= link_to "削除", post_image_path(@post_image), method: :delete, "data-confirm" => "本当に削除しますか？" %></h4>
+									       	<% end %>
+
+										       <h4>コメント<%= @post_image.post_comments.count %>件</h4>
+
+										       <div class="image2"><%= attachment_image_tag @post_image.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size: "60x60", class: "img-circle profile-thumb" %></div>
+										       <br>
+                                 </div>
+                                               <br>
+                                            <div class="box2">
+                                            <% if @post_comments.count == 0 %>
+                                            	<h4>コメントはまだありません</h4>
+                                            <% else %>
+											  <% @post_comments.each do |post_comment| %>
+											         <div><%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", class: "img-circle" %></div>
+												     <h3><%= link_to post_comment.user.name, user_path(post_comment.user.id) %></h3>
+												     <h4><%= post_comment.created_at.strftime('%y/%m/%d') %></h4>
+												     <h4><%= post_comment.comment %></h4>
+
+												     <% if current_user == post_comment.user %>
+
+												       <h4><%= link_to "削除", post_image_post_comment_path(@post_image.id, post_comment.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+												     <% end %>
+												     <hr>
+											  <% end %>
+                                              <%= paginate @post_comments, class: "pagenate" %>
+                                            <% end %>
+                                            </div>
+									　　     <div class="box2">
+							                  <%= form_for [@post_image, @post_comment] do |f| %>
+										        <%= f.text_field :comment, class: "form-control", placeholder: "コメントをここに" %>
+										        <hr>
+									      	    <%= f.submit "送信する", class: "btn btn-success col-xs-12 p-3 mb-2 bg-warning text-white" %>
+						                      <% end %>
+
+				                            </div>
+				                            <br>
+				                            <br>
+				                            <br>
+
+			        </div>
+		</div>
+     </div>
+   </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="btn">
+<%= form_for(current_user.following_relationships.build(following_id: @user.id)) do |f| %>
+  <%= f.hidden_field :following_id %>
+  <i class="fa fa-user-plus"><%= f.submit "フォローする", class: "btn-twitter-follow" %></i>
+<% end %>
+</div>
