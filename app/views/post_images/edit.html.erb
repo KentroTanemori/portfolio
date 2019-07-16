@@ -1,71 +1,66 @@
 <%= render 'template/header' %>
 <div class="media-area2">
-  <div class="container">
-　　　<div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-3">
-         <div class="circle">
-          <h2>User info</h2>
-              <table class="table">
-                <tbody>
-                  <div class="image">
-                   <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100", class: "img-circle" %>
-                  </div>
-                  <br>
-                  <tr>
-                    <th>name</th>
-                    <th><%= @user.name %></th>
-                  </tr>
-                </tbody>
-              </table>
-                 <%= link_to edit_user_path(@user.id) do %>
-                      <div class="col-xs-12 btn btn-default ">
-                      <span class="glyphicon glyphicon-wrench" aria-hidden="true" ></span>
-                      </div>
-                 <% end %>
-                 <br>
-                 <br>
-                 <h4>投稿<%= @post_images.count %>件</h4>
-                <%= render 'follow_form' %>
-                <%= render 'stats' %>
-         </div>
+ <div class="container">
+  <div class="row">
+   <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="circle">
+     <h2>User info</h2>
+      <table class="table">
+       <tbody>
+        <div class="image">
+         <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100", class: "img-circle" %>
+        </div>
+        <br>
+         <tr>
+          <th>name</th>
+          <th><%= @user.name %></th>
+         </tr>
+        </tbody>
+       </table>
+       <%= link_to edit_user_path(@user.id) do %>
+        <div class="col-xs-12 btn btn-default ">
+         <span class="glyphicon glyphicon-wrench" aria-hidden="true" ></span>
+        </div>
+       <% end %>
+       <br>
+       <br>
+       <h4>投稿<%= @post_images.count %>件</h4>
+       <%= render 'follow_form' %>
+       <%= render 'stats' %>
+    </div>
+   </div>
+   <div class="col-xs-12 col-md-offset-2 col-md-7">
+    <%= form_for(@post_image) do |f| %>
+     <div class="slider">
+    <% @post_image.images.each do |image| %>
+    <%= attachment_image_tag image, :image, size: "500x500", class: "sm-image" %>
+    <% end %>
+   </div>
+   <div class="box3">
+    <h4>タイトル</h4>
+     <div class="row">
+      <div class="col-sm-12">
+       <%= f.text_field :title, class: "form-control", warp: "hard" %>
       </div>
-
-       <div class="col-xs-12 col-md-offset-2 col-md-7">
-
-                 <%= form_for(@post_image) do |f| %>
-                 <div class="slider">
-                 <% @post_image.images.each do |image| %>
-
-                     <%= attachment_image_tag image, :image, size: "500x500", class: "sm-image" %>
-                <% end %>
-             </div>
-             <div class="box3">
-                   <h4>タイトル</h4>
-                  <div class="row">
-                     <div class="col-sm-12">
-                       <%= f.text_field :title, class: "form-control", warp: "hard" %>
-                     </div>
-                  </div>
-
-                  <h4>内容</h4>
-                    <div class="row">
-                     <div class="col-sm-12">
-                      <%= f.text_area :body, class: "form-control" %>
-                     </div>
-                    </div>
-                    <br>
-                  <div class="row">
-                     <div class="col-sm-12">
-                      <%= f.submit "更新", class: "btn btn-primary col-xs-12" %>
-                     </div>
-                  </div>
-
-              <% end %>
-                  <br>
-                  <br>
-             </div>
-       </div>
      </div>
+     <h4>内容</h4>
+      <div class="row">
+       <div class="col-sm-12">
+        <%= f.text_area :body, class: "form-control" %>
+       </div>
+      </div>
+      <br>
+      <div class="row">
+       <div class="col-sm-12">
+        <%= f.submit "更新", class: "btn btn-primary col-xs-12" %>
+       </div>
+      </div>
+        <% end %>
+        <br>
+        <br>
+    </div>
+   </div>
   </div>
+ </div>
 </div>
 
