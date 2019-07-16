@@ -1,75 +1,62 @@
 <%= render 'template/header' %>
 <div class="media-area2">
-  <div class="container">
-     <div class="row">
-       <div class="col-xs-12 col-sm-6 col-md-3">
-         <div class="circle">
-          <h2>User info</h2>
-              <table class="table">
-                <tbody>
-                   <div class="image"><%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100", class: "img-circle" %>
-                   </div>
-                   <br>
-                  <tr>
-                    <th>name</th>
-                    <th><%= @user.name %></th>
-                  </tr>
-                </tbody>
-              </table>
-                  <% if current_user != @user %>
-                  <% else %>
-                    <%= link_to edit_user_path(@user.id) do %>
-                      <div class="col-xs-12 btn btn-default ">
-                      <span class="glyphicon glyphicon-wrench" aria-hidden="true" ></span>
-                      </div>
-                    <% end %>
-                  <% end %>
-                 <br>
-                 <br>
-                  <h4>投稿<%= @post_images.count %>件</h4>
-                  <%= render 'follow_form' %>
-                  <%= render 'stats' %>
-
-           </div>
+ <div class="container">
+  <div class="row">
+   <div class="col-xs-12 col-sm-6 col-md-3">
+    <div class="circle">
+     <h2>User info</h2>
+      <table class="table">
+       <tbody>
+        <div class="image"><%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.jpg", size: "100x100", class: "img-circle" %>
+        </div>
+         <br>
+          <tr>
+           <th>name</th>
+           <th><%= @user.name %></th>
+          </tr>
+       </tbody>
+      </table>
+      <% if current_user != @user %>
+       <% else %>
+       <%= link_to edit_user_path(@user.id) do %>
+       <div class="col-xs-12 btn btn-default ">
+        <span class="glyphicon glyphicon-wrench" aria-hidden="true" ></span>
        </div>
-
-
-
-                <div class="col-xs-12 col-md-offset-2 col-md-7 ">
-                            <% if @post_images.count == 0 %>
-                             <h1>まだ投稿はありません</h1>
-                            <% else %>
-                                <% @post_images.each do |post_image| %>
-                                <div class="slider">
-                                  <% post_image.images.each do |image| %>
-                                   <%= attachment_image_tag image, :image, size: "500x500", class: "sm-image" %>
-
-                                   <% end %>
-                                </div>
-                                  <div class="box">
-                                    <h3>
-                                       <%= link_to post_image_path(post_image.id) do %>
-                                         <%= post_image.title %>
-
-                                       <% end %>
-                                    </h3>
-
-                                        <h3><%= post_image.body %></h3>
-
-
-                                         <h4 class="space"><%= post_image.user.name %></h4>
-
-
-                                           <h4><%= link_to "コメント#{post_image.post_comments.count}件", post_image_path(post_image.id) %></h4>
-                                  <br>
-                                  </div>
-                                  <hr>
-                                <% end %>
-
-                              <h4><%= paginate @post_images, class: "pagenate" %></h4>
-                            <% end %>
-
-                    </div>
-          </div>
-      </div>
+       <% end %>
+      <% end %>
+      <br>
+      <br>
+      <h4>投稿<%= @post_images.count %>件</h4>
+      <%= render 'follow_form' %>
+      <%= render 'stats' %>
+     </div>
+    </div>
+     <div class="col-xs-12 col-md-offset-2 col-md-7 ">
+     <% if @post_images.count == 0 %>
+      <h1>まだ投稿はありません</h1>
+      <% else %>
+       <% @post_images.each do |post_image| %>
+        <div class="slider">
+       <% post_image.images.each do |image| %>
+       <%= attachment_image_tag image, :image, size: "500x500", class: "sm-image" %>
+      <% end %>
+        </div>
+       <div class="box">
+        <h3>
+         <%= link_to post_image_path(post_image.id) do %>
+         <%= post_image.title %>
+         <% end %>
+        </h3>
+        <h3><%= post_image.body %></h3>
+        <h4 class="space"><%= post_image.user.name %></h4>
+        <h4><%= link_to "コメント#{post_image.post_comments.count}件", post_image_path(post_image.id) %></h4>
+        <br>
+       </div>
+       <hr>
+     <% end %>
+     <h4><%= paginate @post_images, class: "pagenate" %></h4>
+         <% end %>
+   </div>
   </div>
+ </div>
+</div>
