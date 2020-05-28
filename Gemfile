@@ -67,7 +67,7 @@ gem "refile-mini_magick"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
-gem 'kaminari', '~> 1.1.1'
+gem 'kaminari', '~> 1.2.1'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'bxslider-rails'
